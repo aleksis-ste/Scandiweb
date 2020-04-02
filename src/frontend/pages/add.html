@@ -1,0 +1,38 @@
+<div class="jumbotron text-center">
+    <h1>Add product</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <form method="post" action="">
+            <div class="form-group">
+                <label for="sku">SKU</label>
+                <input type="text" class="form-control" name="sku" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input type="number" class="form-control" name="price" required>
+            </div>
+            <div class="form-group">
+                <label for="type">Type</label>
+                <select class="form-control" id="type" name="type" required>
+                <option value='0'>DVD-disc</option>
+                <option value='1'>Book</option>
+                <option value='2'>Furniture</option>
+                </select>
+            </div>
+            <div class="form-group" id="attributes">
+                <label for="size">Size</label>
+                <input type="number" class="form-control" name="size" required>
+            </div>
+            <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+  <script src="/src/frontend/js/list.js"></script>
