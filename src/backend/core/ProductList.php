@@ -10,7 +10,7 @@ class ProductList
 
     public static function show(): void
     {
-        echo response((new Product)->select(['sku', 'name', 'price', 'attribute'])->get());
+        echo response((new Product)->getAll());
     }
 
 };

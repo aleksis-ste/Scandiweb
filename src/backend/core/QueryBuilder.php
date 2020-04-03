@@ -1,6 +1,6 @@
 <?php
 
-class QueryBuilder
+abstract class QueryBuilder
 {
     private $db;
     private $query = '';

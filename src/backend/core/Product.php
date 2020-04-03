@@ -9,4 +9,8 @@ class Product extends QueryBuilder
         parent::__construct($this->table_name);
     }
 
+    public function getAll()
+    {
+        return $this->select(['*'])->get();
+    }
 };
