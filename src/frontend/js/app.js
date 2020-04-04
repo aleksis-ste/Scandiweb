@@ -1,13 +1,3 @@
-var utils = {
-    
-    get: function(url)
-    {
-        $.get(url, function(data, status) {
-            return {data, status};
-        });
-    }
-}
-
 function router(routes)
 {
     this.routes = routes;

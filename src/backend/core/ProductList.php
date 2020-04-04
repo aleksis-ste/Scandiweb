@@ -13,4 +13,9 @@ class ProductList
         echo response((new Product)->getAll());
     }
 
+    public static function add(array $inputs): void 
+    {
+        $validator = new Validator($inputs);
+    }
+
 };

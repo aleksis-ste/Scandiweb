@@ -24,6 +24,28 @@ abstract class QueryBuilder
         return $this;
     }
 
+    public function update(array $columns, array $data)
+    {
+        $update = "";
+        foreach ($columns as $key => $value)
+            $update .= $value.' = '.' "'.$data[$key].'" , ';
+
+        $update = substr($update, 0, -2);
+
+        $this->query = 'UPDATE '.$this->table_name.' SET '.$update;
+        $this->where('sku', '=', $this->sku);
+
+        var_dump($this->query);
+
+        return $this->db->query($this->query);
+    }
+
+    public function insert(array $data)
+    {
+        $this->query = 'INSERT INTO '.$this->table_name." VALUES('".implode("','", $data)."')";
+        return $this->db->query($this->query);
+    }
+
     public function get()
     {
         return $this->db->query($this->query)->fetch_all(MYSQLI_ASSOC);

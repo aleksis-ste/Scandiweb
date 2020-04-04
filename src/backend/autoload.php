@@ -1,4 +1,25 @@
 <?php
-spl_autoload_register(function ($class_name) {
-    include 'core/'.$class_name.'.php';
-});
+
+include 'src/backend/Core/Helper.php';
+
+function autoload($class_name) 
+{
+
+    # List all the class directories in the array.
+    $array_paths = array(
+        'Core/', 
+        'Core/Products'
+    );
+
+    foreach($array_paths as $path)
+    {
+        $file = sprintf('src/backend/%s/%s.php', $path, $class_name);
+        if(is_file($file)) 
+        {
+            include_once $file;
+        } 
+
+    }
+}
+
+spl_autoload_register('autoload');
