@@ -18,4 +18,13 @@ class ProductList
         $validator = new Validator($inputs);
     }
 
+    public static function delete(array $data)
+    {
+        foreach ($data as $value) {
+            (new Product)->delete('sku', $value);
+        }
+
+        return response(array('status' => 'success', 'message' => 'Deleted count of products: '.count($data)));
+    }
+
 };

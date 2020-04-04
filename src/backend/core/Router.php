@@ -17,12 +17,15 @@ class Router
     public function check()
     {
 
-        foreach ($this->path as $key => $value) {
-            if($_SERVER['PATH_INFO'] == $value[0] && $value[2] == 'get')
-                return call_user_func($value[1]);
-            else if($_SERVER['PATH_INFO'] == $value[0] && $value[2] == 'post')
-                return call_user_func($value[1], $_POST);
+        $key = array_search($_SERVER['PATH_INFO'], array_column($this->path, 0));
+        if($key !== false)
+        {
+            if($this->path[$key][2] == 'get')
+                return call_user_func($this->path[$key][1]);
+            else
+                return call_user_func($this->path[$key][1], $_POST);
         }
 
+        return call_user_func('ProductList::index');
     }
 };

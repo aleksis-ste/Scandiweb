@@ -54,18 +54,13 @@ $(document).ready(() => {
         e.preventDefault();
 
         let inputs = {};
-        $(this).find(':input').each(function() 
-        {
+        $(this).find(':input').each(function() {
             inputs[$(this).attr("name")] = $(this).val();
         });
 
-        console.log(inputs);
-
-        $.post('/products/add', inputs, function(data, status) 
-        {
+        $.post('/products/add', inputs, function(data, status) {
             console.log({data, status});
-
-                $('#message').show().removeClass('alert-success alert-danger').addClass(`alert-${data.status}`).html(data.message);
+            $('#message').show().removeClass('alert-success alert-danger').addClass(`alert-${data.status}`).html(data.message);
         });
     });
 });

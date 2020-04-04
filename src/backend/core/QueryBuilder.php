@@ -40,6 +40,14 @@ abstract class QueryBuilder
         return $this->db->query($this->query);
     }
 
+    public function delete(string $column, string $value)
+    {
+        $this->query = 'DELETE FROM '.$this->table_name;
+        $this->where($column, '=', $value);
+
+        return $this->db->query($this->query);
+    }
+
     public function insert(array $data)
     {
         $this->query = 'INSERT INTO '.$this->table_name." VALUES('".implode("','", $data)."')";
