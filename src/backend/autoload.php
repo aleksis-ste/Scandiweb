@@ -1,14 +1,14 @@
 <?php
 
-include 'src/backend/Core/Helper.php';
+include 'src/backend/core/Helper.php';
 
 function autoload($class_name) 
 {
 
     # List all the class directories in the array.
     $array_paths = array(
-        'Core/', 
-        'Core/Products'
+        'core/', 
+        'core/Products'
     );
 
     foreach($array_paths as $path)
