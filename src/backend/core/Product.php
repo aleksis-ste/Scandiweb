@@ -29,10 +29,7 @@ class Product extends QueryBuilder
 
     public function save()
     {
-        if(!$this->find($this->sku))
-            return $this->insert(array($this->sku, $this->name, $this->price, $this->type, $this->attribute));
-
-        return $this->update(['sku', 'name', 'price', 'type', 'attribute'], $data);
+        return $this->insert(array($this->sku, $this->name, $this->price, $this->type, $this->attribute));
     }
 
     public function getAll()

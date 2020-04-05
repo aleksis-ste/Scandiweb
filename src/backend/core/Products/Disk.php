@@ -13,6 +13,7 @@ class Disk extends Product implements Validate
         $this->name = $inputs['name'];
         $this->price = $inputs['price'];
         $this->type = $inputs['type'];
+        
     }
 
     public function validateAttributes()

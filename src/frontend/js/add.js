@@ -58,6 +58,7 @@ $(document).ready(() => {
         });
 
         $.post('/products/add', inputs, function(data, status) {
+            console.log({data, status});
             $('#message').show().removeClass('alert-success alert-danger').addClass(`alert-${data.status}`).html(data.message);
         });
     });
