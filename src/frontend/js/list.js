@@ -3,7 +3,6 @@ $(document).ready(() => {
     {
         $('.products').html('');
         $.get('/products/get', function(products, status) {
-            console.log(products);
             products.forEach(product => {
                 $('.products').append(`
                 <div class="col-3 pb-4">
@@ -39,7 +38,6 @@ $(document).ready(() => {
         if(items[0])
         {
             $.post('/products/delete', items, function(data, status) {
-                console.log({data, status});
                 $('#message').show().html(data.message);
                 getProducts();
             });

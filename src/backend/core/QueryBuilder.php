@@ -35,8 +35,6 @@ abstract class QueryBuilder
         $this->query = 'UPDATE '.$this->table_name.' SET '.$update;
         $this->where('sku', '=', $this->sku);
 
-        var_dump($this->query);
-
         return $this->db->query($this->query);
     }
 

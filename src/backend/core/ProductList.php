@@ -8,9 +8,9 @@ class ProductList
         include './src/frontend/index.html';
     }
 
-    public static function show(): void
+    public static function show()
     {
-        echo response((new Product)->getAll());
+        return response((new Product)->getAll());
     }
 
     public static function add(array $inputs): void 

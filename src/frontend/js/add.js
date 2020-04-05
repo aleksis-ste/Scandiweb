@@ -1,6 +1,5 @@
 $(document).ready(() => {
     $('#type').change(function() {
-        console.log(this.value);
         switch (this.value) {
             case '0':
                 $('#attributes').html(`
@@ -59,7 +58,6 @@ $(document).ready(() => {
         });
 
         $.post('/products/add', inputs, function(data, status) {
-            console.log({data, status});
             $('#message').show().removeClass('alert-success alert-danger').addClass(`alert-${data.status}`).html(data.message);
         });
     });

@@ -27,6 +27,8 @@ class Validator
     {
         if(!$validate->validateSKU())
             $this->message .= 'Invalid SKU or already exists <br>';
+        if(!$validate->validateName())
+            $this->message .= 'Invalid name <br>';
         if($validate->validatePrice())
             $this->message .= 'Invalid price <br>';
         if($validate->validateType())
