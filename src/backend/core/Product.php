@@ -52,12 +52,12 @@ class Product extends QueryBuilder
 
     public function validatePrice()
     {
-        return !filter_var($this->inputs['price'], FILTER_VALIDATE_FLOAT && (strlen($this->inputs['price']) > 0));
+        return !(filter_var($this->inputs['price'], FILTER_VALIDATE_FLOAT) && (strlen($this->inputs['price']) > 0));
     }
 
     public function validateType()
     {
-        return !preg_match('/[0-2]/', $this->inputs['type'] && (strlen($this->inputs['type']) > 0));
+        return !(preg_match('/[0-2]/', $this->inputs['type']) && (strlen($this->inputs['type']) > 0));
     }
 
 };
