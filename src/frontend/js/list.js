@@ -38,7 +38,6 @@ $(document).ready(() => {
         if(items[0])
         {
             $.post('/products/delete', items, function(data, status) {
-                console.log({data, status});
                 $('#message').show().html(data.message);
                 getProducts();
             });
