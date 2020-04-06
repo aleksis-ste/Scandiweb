@@ -49,7 +49,7 @@ class Product extends QueryBuilder
 
     public function validatePrice()
     {
-        return !(filter_var($this->inputs['price'], FILTER_VALIDATE_FLOAT) && (strlen($this->inputs['price']) > 0));
+        return !(filter_var($this->inputs['price'], FILTER_VALIDATE_FLOAT) && (strlen($this->inputs['price']) > 0) && floatval($this->inputs['price'] >= 0));
     }
 
     public function validateType()

@@ -18,7 +18,7 @@ class Book extends Product implements Validate
 
     public function validateAttributes()
     {
-        if(is_numeric($this->inputs['weight']))
+        if(is_numeric($this->inputs['weight']) && floatval($this->inputs['weight'] >= 0))
         {
             $this->attribute = $this->inputs['weight'].' KG';
             return true;

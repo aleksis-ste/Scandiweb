@@ -3,6 +3,7 @@ $(document).ready(() => {
     {
         $('.products').html('');
         $.get('/products/get', function(products, status) {
+            if(Array.isArray(products))
             products.forEach(product => {
                 $('.products').append(`
                 <div class="col-3 pb-4">

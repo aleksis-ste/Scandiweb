@@ -18,7 +18,7 @@ class Disk extends Product implements Validate
 
     public function validateAttributes()
     {
-        if(is_numeric($this->inputs['size']))
+        if(is_numeric($this->inputs['size']) && floatval($this->inputs['size'] >= 0))
         {
             $this->attribute = $this->inputs['size'].' MB';
             return true;
